@@ -2,7 +2,6 @@ import logging
 import os
 import sys
 import asyncio
-import vmelogger
 import json
 import pika
 from vmepython.vmevcenter import VCenterClient
@@ -22,7 +21,13 @@ from PcFilter import PcFilter
 from dotenv import load_dotenv
 
 # Define logging
-vmelogger.setup_logging()
+log_format = "%(asctime)s | %(name)s | %(levelname)s | %(filename)s | %(funcName)s:%(lineno)d | %(message)s"
+    logging.basicConfig(
+        level=os.environ.get("LOGLEVEL", "DEBUG"),
+        format=log_format,
+        handlers=[logging.StreamHandler(sys.stdout)],
+        force=True,
+    )
 logger = logging.getLogger(__name__)
 
 # Reduce logs from pika, which was very verbose
