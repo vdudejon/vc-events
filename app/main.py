@@ -4,7 +4,7 @@ import sys
 import asyncio
 import json
 import pika
-from vmepython.vmevcenter import VCenterClient
+from vdudevmomi import VCenterClient
 from pyVmomi import vim, vmodl
 from pyVmomi.VmomiSupport import (
     Object,
