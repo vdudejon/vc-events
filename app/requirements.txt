@@ -1,3 +1,4 @@
+git+https://github.com/vdudejon/vdudevmomi.git
 python-dotenv==1.0.0
 pyvim==3.0.3
 pyvmomi==8.0.2.0
